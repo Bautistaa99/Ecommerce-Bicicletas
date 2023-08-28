@@ -12,6 +12,7 @@ export default function GifSection(){
         autoPlay
         muted
         loop
+        loading="lazy"
         className='object-center object-cover h-full w-full'
       />
     </div>

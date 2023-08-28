@@ -1,6 +1,7 @@
 import logo from './img/logoSF.png'
 import cart from './img/cart.png'
 import user from './img/user.png'
+import { Link } from 'react-router-dom'
 
 export default function Header(){
   const cartItems = 0
@@ -18,9 +19,9 @@ export default function Header(){
         <ul 
           className='flex [&>li>a]:font-bold [&>li>a]:text-lg [&>li>a]:text-black [&>li>a]:px-16 '
         >
-          <li><a>Inicio</a></li>
-          <li><a>Tienda</a></li>
-          <li><a>Contacto</a></li>
+          <li><Link to='/'>Inicio</Link></li>
+          <li><Link>Tienda</Link></li>
+          <li><Link>Contacto</Link></li>
         </ul>
       </nav>
       <div className='flex justify-around pl-24'> 
@@ -30,9 +31,11 @@ export default function Header(){
           /><span className='text-black font-bold text-xl'>{cartItems}</span>
         </div>
         <div>
+        <Link to='/Login'>
           <img src={user} alt='Usuario' 
             className='h-10'
           />
+        </Link>
         </div>
       </div>
     </header>
