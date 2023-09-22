@@ -1,9 +1,14 @@
+
 import logo from './img/logoSF.png'
 import cart from './img/cart.png'
 import user from './img/user.png'
 import { Link } from 'react-router-dom'
+import {useId} from 'react'
+
+
 
 export default function Header(){
+  const menuLinkId= useId()
   const cartItems = 0
   return(
     <header 
@@ -17,14 +22,19 @@ export default function Header(){
       </div>
       <nav>
         <ul 
-          className='flex [&>li>a]:font-bold [&>li>a]:text-lg [&>li>a]:text-black [&>li>a]:px-16 '
+          className='flex '
         >
-          <li><Link to='/'>Inicio</Link></li>
-          <li><Link>Tienda</Link></li>
-          <li><Link>Contacto</Link></li>
+        
+          {[
+            ['Inicio','/'],
+            ['Tienda','/Tienda'],
+            ['Contacto','/Contacto'],
+          ].map(([title,url])=>(
+            <li key={menuLinkId}><Link to={url} className='px-16 text-lg text-black font-bold'>{title}</Link></li>
+          ))}
         </ul>
       </nav>
-      <div className='flex justify-around pl-24'> 
+      <div className='flex justify-around pl-24 lg:m-10 ' > 
         <div className='flex'>
           <img src={cart} alt='Carro de compras' 
             className='h-10'

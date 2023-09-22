@@ -1,11 +1,11 @@
 import GifSection from "../../components/GifSection";
-import Shop from "../../components/Shop";
+import Sections from "../../components/Sections";
 
 export default function HomePage(){
   return(
     <>
       <GifSection />
-      <Shop />
+      <Sections />
     </>
   )
 }
